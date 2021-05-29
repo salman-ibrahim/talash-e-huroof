@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">تلاشِ حروف</string>
+    <string name="dialogYouWinTitle">مبارک ہو! آپ جیت گۓ</string>
+    <string name="dialogYouWinButton">دوبارہ کھیلئے</string>
+    <string name="dialogYouWinOrLooseDesc">کیا آپ دوبارہ کھیلنا چاہتے ہیں؟</string>
+    <string name="loseTitleDialog">آپ ہار گۓ!</string>
+
+    <string name="mainMenuPlayBtn">شروع کریں</string>
+    <string name="mainMenuExit">بند کریں</string>
+    <string name="mainMenuAboutBtn">مزید جانئے</string>
+    <string name="mainMenuSettingsBtn">ترتیبات</string>
+
+    <string name="descriptioMainMenuBackgroundDescription">Main menu background</string>
+    <string name="descriptionMainMenuLogo">Logo of the game</string>
+    <string name="descriptionContactMeIcon">Contact me email icon</string>
+    <string name="descriptionWinOrGameOverLogo">Win or lose logo</string>
+
+    <string name="aboutGameDescription">تلاشِ حروف آپ کو لامحدود الفاظ ڈھوندننے کی  پہیلیاں مفت میں کھیلنے دیتا ہے! یہ ایک معروف الفاظ کا کھیل ہے جو دئیے گئے الفاظ کے حروف پر مشتمل ہوتا ہے ، جس میں عام طور پر ایک مستطیل یا مربع شکل ہوتی ہے۔ اس پہیلی کا مقصد ڈبوں  کے اندر چھپے ہوئے تمام الفاظ کو تلاش کرنا اور اسے نشان دہ کرنا ہے۔ الفاظ افقی طور پر ، عمودی طور پر یا اختصافی طور پر رکھے جا سکتے ہیں۔ اس کھیل کو تین مختلف مراحل میں تقسیم کیا گیا ہے، آپ کو وقت کی حد کو ختم ہونے سے پہلے کھیل کو مکمل کرنا ہوتا ہے۔</string>
+    <string name="aboutGameVersion">Version %1$s</string>
+    <string name="aboutMeContactMe">رابطہ کریں</string>
+    <string name="aboutCheckTheCode">اس کام کی مزید معلومات</string>
+    <string name="aboutMeVisitMe">میری ویب سائٹ کا دورہ کیجیۓ</string>
+    <string name="emailTitle">Hi Salman Malik</string>
+    <string name="emailMessage">Hello, I\'m sending you an email from تلاشِ حروف app!"</string>
+    <string name="aboutMeSendEmailDialog">Send Email</string>
+    <string name="devEmail" translatable="false">salmanmalik245@gmail.com</string>
+    <string name="devWebsite">https://salmanmalik-pk.github.io/</string>
+    <string name="projectLink">https://github.com/AraujoJordan/Android-Word-Finder</string>
+    <string name="levelChooserTitle">درجہ چنیئے</string>
+    <string name="levelDifficultyHard">مشکل</string>
+    <string name="levelDifficultyMedium">اوسط</string>
+    <string name="levelDifficultyEasy">آسان</string>
+    <string name="levelSelectionTitle">مرحلہ چنیئے</string>
+    <string name="levelLabel">مرحلہ نمبر %1$d</string>
+
+
+</resources>

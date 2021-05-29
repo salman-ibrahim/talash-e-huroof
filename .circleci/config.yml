@@ -1,0 +1,37 @@
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.2
+jobs:
+  build:
+    docker:
+      - image: circleci/android:api-29
+    #    parallelism: 2
+    environment:
+      - TERM: dumb
+      - CODECOV_TOKEN: 503aca70-fe62-4c0c-a77d-b86fd3e767e4
+      - COV_REPORT_LOCATION: app/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml
+      - JVM_OPTS: -Xmx2048m -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -XX:ParallelGCThreads=2 -Djava.util.concurrent.ForkJoinPool.common.parallelism=2
+      - _JAVA_OPTIONS: "-Xmx2048m -XX:ParallelGCThreads=2 -XX:ConcGCThreads=2 -XX:ParallelGCThreads=2 -Djava.util.concurrent.ForkJoinPool.common.parallelism=2"
+    steps:
+      - checkout
+      #      - restore_cache:
+      #          key: jars-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      #      - save_cache:
+      #          paths:
+      #            - ~/.gradle
+      #            - ~/.m2
+      #          key: jars-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
+      - run:
+          name: Lint Check
+          command: ./gradlew :app:lint
+      - run:
+          name: Run Tests
+          command: ./gradlew :app:jacocoTestReportDebug
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
+      - codecov/upload:
+          file: /home/circleci/project/app/build/reports/jacoco/debug/jacoco.xml
