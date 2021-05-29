@@ -9,7 +9,7 @@ android {
     compileSdkVersion(29)
     buildToolsVersion("29.0.2")
     defaultConfig {
-        applicationId = "com.araujo.jordan.wordfindify"
+        applicationId = "com.araujo.com.gatow.salman.com.gatow.salman.talashehuroof"
         testApplicationId = "$applicationId.test"
         minSdkVersion(23)
         targetSdkVersion(29)
