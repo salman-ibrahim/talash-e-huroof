@@ -17,7 +17,7 @@
             android:name=".views.mainMenu.MainMenuActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="user">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +28,7 @@
             android:name=".views.board.BoardActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="user"/>
 
     </application>
 

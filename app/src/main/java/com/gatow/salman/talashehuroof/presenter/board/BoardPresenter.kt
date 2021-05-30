@@ -1,24 +1,4 @@
-/**
- * Designed and developed by Jordan Lira (@araujojordan)
- *
- * Copyright (C) 2020 Jordan Lira de Araujo Junior
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
- * associated documentation files (the "Software"), to deal in the Software without restriction,
- * including without limitation the rights to use, copy, modify, merge, publish, distribute,
- * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or
- * substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
- * NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
- * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- */
+
 
 package com.gatow.salman.talashehuroof.presenter.board
 
@@ -186,79 +166,88 @@ class BoardPresenter(private val boardEvents: BoardListener?) : Serializable {
 
                 //Level Six Vegetables
                 "levelsix" -> listOf(
-                    WordAvailable("بابر"),
-                    WordAvailable("آفریدی"),
-                    WordAvailable("فخر"),
-                    WordAvailable("حسن"),
-                    WordAvailable("شعیب"),
-                    WordAvailable("انضمام")
+                    WordAvailable("شلجم"),
+                    WordAvailable("بھنڈی"),
+                    WordAvailable("بینگن"),
+                    WordAvailable("گاجر"),
+                    WordAvailable("کھیرہ"),
+                    WordAvailable("ٹماٹر")
                 )
 
                 //Level Seven Flowers
                 "levelseven" -> listOf(
-                    WordAvailable("بابر"),
-                    WordAvailable("آفریدی"),
-                    WordAvailable("فخر"),
-                    WordAvailable("حسن"),
-                    WordAvailable("شعیب"),
-                    WordAvailable("انضمام")
+                    WordAvailable("گلاب"),
+                    WordAvailable("چنبیلی"),
+                    WordAvailable("موتیہ"),
+                    WordAvailable("گیندہ"),
+                    WordAvailable("کنول"),
+                    WordAvailable("نرگس")
                 )
 
                 //Level Eight Appliances
                 "leveleight" -> listOf(
-                    WordAvailable("بابر"),
-                    WordAvailable("آفریدی"),
-                    WordAvailable("فخر"),
-                    WordAvailable("حسن"),
-                    WordAvailable("شعیب"),
-                    WordAvailable("انضمام")
+                    WordAvailable("استری"),
+                    WordAvailable("پنکها"),
+                    WordAvailable("چولھا"),
+                    WordAvailable("بلب"),
+                    WordAvailable("فریج"),
+                    WordAvailable("ٹوکری")
                 )
 
                 //Level Nine Languages
                 "levelnine" -> listOf(
-                    WordAvailable("بابر"),
-                    WordAvailable("آفریدی"),
-                    WordAvailable("فخر"),
-                    WordAvailable("حسن"),
-                    WordAvailable("شعیب"),
-                    WordAvailable("انضمام")
+                    WordAvailable("اردو"),
+                    WordAvailable("پشتو"),
+                    WordAvailable("سرائیکی"),
+                    WordAvailable("سندھی"),
+                    WordAvailable("پنجابی"),
+                    WordAvailable("فارسی")
                 )
 
                 //Level Ten Days
                 "levelten" -> listOf(
-                    WordAvailable("بابر"),
-                    WordAvailable("آفریدی"),
-                    WordAvailable("فخر"),
-                    WordAvailable("حسن"),
-                    WordAvailable("شعیب"),
-                    WordAvailable("انضمام")
+
+                    WordAvailable("سوموار"),
+                    WordAvailable("منگل"),
+                    WordAvailable("جمرات"),
+                    WordAvailable("ہفتہ"),
+                    WordAvailable("اتوار"),
+                    WordAvailable("جمعہ")
                 )
 
                 //Level Eleven Countries
                 "leveleleven" -> listOf(
-                    WordAvailable("بابر"),
-                    WordAvailable("آفریدی"),
-                    WordAvailable("فخر"),
-                    WordAvailable("حسن"),
-                    WordAvailable("شعیب"),
-                    WordAvailable("انضمام")
+                    WordAvailable("فلسطین"),
+                    WordAvailable("پاکستان"),
+                    WordAvailable("الجزائر"),
+                    WordAvailable("ایران"),
+                    WordAvailable("مالدیپ"),
+                    WordAvailable("صومالیہ")
+
                 )
 
-                //Level Twelve Continents
+                //Level Twelve Planets
                 "leveltwelve" -> listOf(
-                    WordAvailable("بابر"),
-                    WordAvailable("آفریدی"),
-                    WordAvailable("فخر"),
-                    WordAvailable("حسن"),
-                    WordAvailable("شعیب"),
-                    WordAvailable("انضمام")
+                    WordAvailable("زھرہ"),
+                    WordAvailable("زمین"),
+                    WordAvailable("مریخ"),
+                    WordAvailable("مشتری"),
+                    WordAvailable("نیپچون"),
+                    WordAvailable("یورینس")
                 )
-
+                //Don't remove this "test" it is for validation only and is used by program
                 "test" -> listOf(
                     WordAvailable(
                         "Test"
                     )
                 )
+                /*This Else Condition will be helpful if the developer
+                * Plans to add a feature of switching the game to English-Urdu
+                * It will generate english words using DataMuse API and it will require
+                * an active internet connection
+                * the game will work normally and will not require internet as long as
+                * the default levels are being played and API is not called.
+                * */
                 else -> DataMuseAPI()
                     .getRandomWordList(category)
             }

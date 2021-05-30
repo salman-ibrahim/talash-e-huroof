@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/mainMenuLogo"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_width="206dp"
+        android:layout_height="99dp"
         android:contentDescription="@string/descriptionMainMenuLogo"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_logo" />
