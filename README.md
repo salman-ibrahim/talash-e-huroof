@@ -1,4 +1,4 @@
-# Taash-e-Huroof
+# Talash-e-Huroof
 An incredible Word Finder game fully made in Kotlin
 
 ```
