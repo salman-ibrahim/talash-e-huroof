@@ -47,7 +47,7 @@ class MainMenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         mainMenuLogo.startAnimation(
-            AnimationUtils.loadAnimation(context, R.anim.slide_logo_appearing)
+            AnimationUtils.loadAnimation(context, R.anim.fade_in__logo_appear)
         )
 
 
