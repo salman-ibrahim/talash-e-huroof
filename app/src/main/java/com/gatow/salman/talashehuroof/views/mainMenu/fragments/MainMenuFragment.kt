@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_main_menu.*
 
 /**
  * Fragment that show first menu in the MainMenuActivity
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class MainMenuFragment : Fragment() {
 

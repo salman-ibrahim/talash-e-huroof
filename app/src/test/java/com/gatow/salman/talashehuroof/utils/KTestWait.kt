@@ -8,7 +8,7 @@ import java.util.*
 
 /**
  * Unit Test helper for async parts of code on Roboeletric
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class KTestWait<T>(private var millisseconds: Long = 3000) {
 

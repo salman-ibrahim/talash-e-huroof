@@ -33,7 +33,7 @@ import nl.dionsegijn.konfetti.models.Size
 
 /**
  * Main Activity of the Game Board
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class BoardActivity : AppCompatActivity(),
     BoardListener {

@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit
 /**
  * Instrumented tests for the game main menu
  * It will navigate for all the options of menu of the game
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 @LargeTest
 @RunWith(androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner::class)

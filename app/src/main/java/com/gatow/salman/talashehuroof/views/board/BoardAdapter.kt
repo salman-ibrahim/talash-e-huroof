@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.item_board.view.*
 
 /**
  * Characters Board Adapter to the RecycleView
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class BoardAdapter(
     var context: Context? = null,

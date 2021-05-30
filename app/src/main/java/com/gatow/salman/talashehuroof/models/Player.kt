@@ -4,7 +4,7 @@ package com.gatow.salman.talashehuroof.models
 
 /**
  * Model class that represent a player
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  * @param level level that user already passed
  *
  */

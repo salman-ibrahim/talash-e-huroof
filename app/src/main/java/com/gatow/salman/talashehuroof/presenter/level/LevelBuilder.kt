@@ -1,13 +1,12 @@
-
-
+/**
+ * Model class that represent a level on the board
+ * @author Salman Ibrahim (salmanmaik-pk)
+*/
 package com.gatow.salman.talashehuroof.presenter.level
 
 import com.gatow.salman.talashehuroof.models.Level
 
-/**
- * Presenter that generate game levels
- * @author Jordan L. Araujo Jr. (araujojordan)
- */
+
 class LevelBuilder {
 
     private val levels = listOf(

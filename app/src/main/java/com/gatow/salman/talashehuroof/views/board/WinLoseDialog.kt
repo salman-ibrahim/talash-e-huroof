@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.dialog_game_end.view.*
 
 /**
  * Dialog that show the win, lose or error messages
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class WinLoseDialog(act: BoardActivity, victory: Boolean, msg: String? = null) {
     init {

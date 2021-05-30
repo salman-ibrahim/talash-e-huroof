@@ -20,7 +20,7 @@ import org.robolectric.annotation.LooperMode
 
 /**
  * Unit tests for the app storage
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.P])

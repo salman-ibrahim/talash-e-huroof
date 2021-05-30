@@ -10,7 +10,7 @@ import com.gatow.salman.talashehuroof.presenter.level.LevelBuilder
 
 /**
  * Used to preserve game status across app restarts
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class StorageUtils {
 

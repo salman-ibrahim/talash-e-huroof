@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_about_me.*
 
 /**
  * Fragment that show the about menu in the MainMenuActivity
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class MenuAboutFragment : Fragment() {
 

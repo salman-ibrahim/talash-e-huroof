@@ -12,7 +12,7 @@ import com.gatow.salman.talashehuroof.views.mainMenu.fragments.MainMenuFragment
 
 /**
  * First Activity of the app and it's shows the menus for start the game
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class MainMenuActivity : AppCompatActivity() {
 

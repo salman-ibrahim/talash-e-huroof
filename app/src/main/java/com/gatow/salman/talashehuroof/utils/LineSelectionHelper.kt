@@ -9,7 +9,7 @@ import kotlin.math.atan2
 
 /**
  * Make a straight line from first to last letter selected, restricting to the 8 directions
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class LineSelectionHelper {
     private var firstChar: BoardCharacter? = null

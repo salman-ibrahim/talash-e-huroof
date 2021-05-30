@@ -9,7 +9,7 @@ import kotlin.random.Random
 
 /**
  * Presenter class that build the gaming Board
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  * @param board that wil be used to generate the gaming board (can be empty)
  *
  */

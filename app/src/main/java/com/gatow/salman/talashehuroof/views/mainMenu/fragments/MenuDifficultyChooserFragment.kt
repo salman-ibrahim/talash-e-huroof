@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_difficulty_chooser.*
 
 /**
  * Fragment that show the difficulty menu in the MainMenuActivity
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class MenuDifficultyChooserFragment : Fragment() {
 

@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.item_level.view.*
 
 /**
  * Fragment that show the level selection menu in the MainMenuActivity
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class MenuLevelSelectionFragment : Fragment() {
 

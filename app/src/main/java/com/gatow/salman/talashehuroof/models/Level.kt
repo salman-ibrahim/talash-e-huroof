@@ -4,7 +4,7 @@ package com.gatow.salman.talashehuroof.models
 
 /**
  * Model class that represent a level of the board
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  * @param level level of the board (1,2,3...)
  * @param category used to generate words (like fruits, cars...)
  *

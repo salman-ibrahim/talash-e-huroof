@@ -1,4 +1,8 @@
-
+/**
+ * Model class that represent the board
+ *
+ * @author Salman Ibrahim (salmanmaik-pk)
+*/
 
 package com.gatow.salman.talashehuroof.presenter.board
 
@@ -13,7 +17,7 @@ import kotlin.math.min
 
 /**
  * Presenter class that manipulate the board
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  */
 class BoardPresenter(private val boardEvents: BoardListener?) : Serializable {
 

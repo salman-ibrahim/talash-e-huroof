@@ -9,12 +9,12 @@ android {
     compileSdkVersion(29)
     buildToolsVersion("29.0.2")
     defaultConfig {
-        applicationId = "com.araujo.com.gatow.salman.com.gatow.salman.talashehuroof"
+        applicationId = "com.gatow.com.gatow.salman.com.gatow.salman.talashehuroof"
         testApplicationId = "$applicationId.test"
         minSdkVersion(23)
         targetSdkVersion(29)
         versionCode = 1
-        versionName = "2.0.0"
+        versionName = "1.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments = mapOf(
             "clearPackageData" to "true"

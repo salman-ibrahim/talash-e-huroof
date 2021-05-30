@@ -7,7 +7,7 @@ import java.util.*
 /**
  * Model class that represent a character in the board
  *
- * @author Jordan L. Araujo Jr. (araujojordan)
+ * @author Salman Ibrahim (salmanmaik-pk)
  * @param char The char itself in a string (so it easier to concatenate and generate string word)
  * @param position the position where index 0 is X and index 1 is Y.
  * @param isOnSelection is used to show animations on board when swiping
