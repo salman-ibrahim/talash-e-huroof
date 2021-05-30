@@ -177,6 +177,15 @@ class BoardActivity : AppCompatActivity(),
             storage.savePlayer(this, player)
         }
 
+        // Fix the level error
+//        if (!LevelBuilder()
+//                .getLevelStatus(player.level)) {
+//            LevelBuilder().setLevelStatus(player.level)
+//            ++player.level
+//            storage.savePlayer(this, player)
+//        }
+
+
         viewKonfetti?.build()?.apply {
             addColors(Color.YELLOW, Color.BLUE, Color.MAGENTA)
             setDirection(0.0, 359.0)

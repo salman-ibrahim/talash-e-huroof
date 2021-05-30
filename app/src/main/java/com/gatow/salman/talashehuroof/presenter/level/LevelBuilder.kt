@@ -54,4 +54,11 @@ class LevelBuilder {
      * Get category of a given level
      */
     fun getCategory(level: Int) = levels.firstOrNull { it.level == level }?.category ?: "levelone"
+
+    //Level.staus is disabled
+//    fun getLevelStatus(level: Int) = levels.firstOrNull { it.level == level }?.cleared ?: false
+
+//    fun setLevelStatus(level: Int) {
+//        levels[level].cleared = true
+//    }
 }

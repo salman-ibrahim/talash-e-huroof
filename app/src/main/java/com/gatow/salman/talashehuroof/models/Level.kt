@@ -29,4 +29,4 @@ package com.gatow.salman.talashehuroof.models
  * @param category used to generate words (like fruits, cars...)
  *
  */
-data class Level(val level: Int, val category: String)
+data class Level(val level: Int, val category: String/*,var cleared: Boolean*/) //Boolean is to fix ++level error
