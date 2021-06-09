@@ -52,7 +52,7 @@ Once you choose to start the game, there will be three levels of difficulty to c
 Once you choose difficulty, in the next menu choose levels out of 12 available. with each victory unlocks the new level.
 
 # Ads
-Two ads are integrated into this app which can be changed by modiying the ids at the bottom of strings resource file with:
+Two ads are integrated into this app which can be changed by modifying the ids at the bottom of strings resource file with:
 * *inGameBanner* for banner ad ID to show at bottom of in-game screen.
 * *gameOverInterstitial* for interstitial ad after level is ended (either lose, won or closed by user).
 
