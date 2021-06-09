@@ -2,6 +2,7 @@
 
 package com.gatow.salman.talashehuroof.views.board
 
+import android.bluetooth.le.AdvertiseData
 import android.content.res.Configuration
 import android.graphics.Color
 import android.media.MediaPlayer
@@ -17,19 +18,24 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.gatow.salman.talashehuroof.R
 import com.araujojordan.ktlist.KtList
+import com.gatow.salman.talashehuroof.R
 import com.gatow.salman.talashehuroof.models.BoardCharacter
 import com.gatow.salman.talashehuroof.models.WordAvailable
 import com.gatow.salman.talashehuroof.presenter.board.BoardListener
 import com.gatow.salman.talashehuroof.presenter.board.BoardPresenter
 import com.gatow.salman.talashehuroof.presenter.level.LevelBuilder
 import com.gatow.salman.talashehuroof.presenter.storage.StorageUtils
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.android.synthetic.main.board_activity.*
 import kotlinx.android.synthetic.main.item_words.view.*
 import nl.dionsegijn.konfetti.KonfettiView
 import nl.dionsegijn.konfetti.models.Shape
 import nl.dionsegijn.konfetti.models.Size
+import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Main Activity of the Game Board
@@ -76,10 +82,38 @@ class BoardActivity : AppCompatActivity(),
     private var activityBoardAvailableWordsGrid: RecyclerView? = null
     private var activityBoardResetButton: ImageView? = null
     private var activityBoardTimer: TextView? = null
+    lateinit var mAdView : AdView
+    private var mInterstitialAd: InterstitialAd? = null
+    private final var TAG = "GameOver"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.board_activity)
+
+        // In-game Banner ad initialize here
+        MobileAds.initialize(this) {
+            mAdView = findViewById(R.id.inGameAd)
+            val adRequest = AdRequest.Builder().build()
+            mAdView.loadAd(adRequest)
+        }
+
+        //Interstitial Ad
+        val adRequest = AdRequest.Builder().build()
+        val adID = this.resources.getString(R.string.gameOverInterstitial)
+
+        InterstitialAd.load(this,adID, adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.d(TAG, adError?.message)
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.d(TAG, "Ad was loaded.")
+                mInterstitialAd = interstitialAd
+            }
+
+
+        })
 
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
@@ -107,6 +141,13 @@ class BoardActivity : AppCompatActivity(),
 
     override fun onDestroy() {
         super.onDestroy()
+
+        //Show interstitial
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this)
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.")
+        }
 
         //nulling views reference to avoid memory leak
         activityBoardSelectedWord = null
@@ -155,6 +196,7 @@ class BoardActivity : AppCompatActivity(),
                 .getLevels().size) {
             ++player.level
             storage.savePlayer(this, player)
+
         }
 
         // Fix the level error
@@ -178,6 +220,31 @@ class BoardActivity : AppCompatActivity(),
             streamFor(300, 1500L)
             showDialog(true)
         }
+    }
+
+    /**
+     * Hide system navigation to make game full screen
+     */
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) hideSystemUI()
+    }
+
+    private fun hideSystemUI() {
+
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+
+                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_FULLSCREEN)
+    }
+
+    private fun showSystemUI() {
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
     }
 
     /**

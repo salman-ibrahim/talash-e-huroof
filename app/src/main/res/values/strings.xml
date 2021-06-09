@@ -10,7 +10,7 @@
     <string name="mainMenuAboutBtn">مزید جانئے</string>
     <string name="mainMenuSettingsBtn">ترتیبات</string>
 
-    <string name="descriptioMainMenuBackgroundDescription">Main menu background</string>
+    <string name="descriptionMainMenuBackgroundDescription">Main menu background</string>
     <string name="descriptionMainMenuLogo">Logo of the game</string>
     <string name="descriptionContactMeIcon">Contact me email icon</string>
     <string name="descriptionWinOrGameOverLogo">Win or lose logo</string>
@@ -20,7 +20,7 @@
     <string name="aboutMeContactMe">رابطہ کریں</string>
     <string name="aboutCheckTheCode">اس کام کی مزید معلومات</string>
     <string name="aboutMeVisitMe">میری ویب سائٹ کا دورہ کیجیۓ</string>
-    <string name="emailTitle">Hi Salman Malik</string>
+    <string name="emailTitle">Contacting From تلاشِ حروف App</string>
     <string name="emailMessage">Hello, I\'m sending you an email from تلاشِ حروف app!"</string>
     <string name="aboutMeSendEmailDialog">Send Email</string>
     <string name="devEmail" translatable="false">salmanmalik245@gmail.com</string>
@@ -33,5 +33,8 @@
     <string name="levelSelectionTitle">مرحلہ چنیئے</string>
     <string name="levelLabel">مرحلہ نمبر %1$d</string>
 
+    <!--    Ads IDs     -->
+    <string name="inGameBanner">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="gameOverInterstitial">ca-app-pub-3940256099942544/1033173712</string>
 
 </resources>
