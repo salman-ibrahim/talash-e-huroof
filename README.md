@@ -55,6 +55,7 @@ Once you choose difficulty, in the next menu choose levels out of 12 available. 
 Two ads are integrated into this app which can be changed by modifying the ids at the bottom of strings resource file with:
 * *inGameBanner* for banner ad ID to show at bottom of in-game screen.
 * *gameOverInterstitial* for interstitial ad after level is ended (either lose, won or closed by user).
+* *gameOverInterstitial* can be replaced with video Interstitial but avoid *rewarded interstitial* until there's really a reward.
 
 # Features
 
@@ -62,6 +63,8 @@ Two ads are integrated into this app which can be changed by modifying the ids a
 * Difficulty Chooser
 * 12 Unique levels
 * AdMob Ads
+* Fully made in Android Studio
+* Used *vector assets* instead of images to make reskin easier.
 
 # Future Works
 
