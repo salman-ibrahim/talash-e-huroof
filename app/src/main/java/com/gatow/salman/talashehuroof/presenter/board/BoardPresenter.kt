@@ -134,7 +134,7 @@ class BoardPresenter(private val boardEvents: BoardListener?) : Serializable {
                     WordAvailable("امرود"),
                     WordAvailable("سیب"),
                     WordAvailable("آڑو"),
-                    WordAvailable("پپیتا"),
+                    WordAvailable("انار"),
                     WordAvailable("کیلا")
                 )
 
@@ -185,7 +185,7 @@ class BoardPresenter(private val boardEvents: BoardListener?) : Serializable {
                     WordAvailable("موتیہ"),
                     WordAvailable("گیندہ"),
                     WordAvailable("کنول"),
-                    WordAvailable("نرگس")
+                    WordAvailable("سوسن")
                 )
 
                 //Level Eight Appliances
@@ -245,7 +245,7 @@ class BoardPresenter(private val boardEvents: BoardListener?) : Serializable {
                         "Test"
                     )
                 )
-                /*This Else Condition will be helpful if the developer
+                /**This Else Condition will be helpful if the developer
                 * Plans to add a feature of switching the game to English-Urdu
                 * It will generate english words using DataMuse API and it will require
                 * an active internet connection

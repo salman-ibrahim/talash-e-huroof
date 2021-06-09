@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">@color/colorPurpleLight</color>
     <color name="colorAccent">#feb861</color>
 
-    <color name="unselectCharColor">#FFF</color>
+    <color name="unselectCharColor">#000000</color>
     <color name="lineColor">#229297B6</color>
     <color name="selectCharColor">#FFF</color>
 
