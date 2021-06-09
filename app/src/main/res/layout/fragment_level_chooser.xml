@@ -35,7 +35,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/levelSelectionTitle"
             android:textColor="@android:color/black"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <ScrollView
             android:layout_width="match_parent"

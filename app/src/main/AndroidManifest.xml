@@ -30,6 +30,12 @@
             android:label="@string/app_name"
             android:screenOrientation="user"/>
 
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+<!--        Configure the ads here -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2313151984818754~6765133333"/>
+
     </application>
 
 </manifest>

@@ -14,7 +14,7 @@ android {
         minSdkVersion(23)
         targetSdkVersion(29)
         versionCode = 1
-        versionName = "1.1.0"
+        versionName = "1.2.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments = mapOf(
             "clearPackageData" to "true"
@@ -99,6 +99,9 @@ dependencies {
     implementation("androidx.core:core-ktx:1.2.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3")
 
+    //Google AdMob Ads dependencies
+    implementation ("com.google.android.gms:play-services-ads:20.1.0")
+
     //Network Libs
     implementation("com.squareup.okhttp3:okhttp:4.6.0")
 
@@ -113,6 +116,8 @@ dependencies {
     //My personal Libs
     implementation("com.github.AraujoJordan:KtList:0.5.1")
     implementation("com.android.support:cardview-v7:28.0.0")
+    implementation("com.google.android.gms:play-services-ads:20.1.0")
+//    implementation("com.google.firebase:firebase-ads:19.1.0")
 
     //Test libraries
     androidTestImplementation("com.github.AraujoJordan:latest:0.0.5") {

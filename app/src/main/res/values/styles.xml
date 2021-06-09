@@ -6,9 +6,6 @@
         <item name="colorPrimary">@color/coloBoardColorfulBackground</item>
         <item name="colorPrimaryDark">@color/coloBoardColorfulBackgroundDarker</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-
     </style>
 
     <style name="RoundedDialog" parent="Theme.AppCompat.Light.Dialog.Alert">

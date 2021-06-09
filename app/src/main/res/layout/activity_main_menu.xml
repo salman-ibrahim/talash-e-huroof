@@ -10,7 +10,7 @@
         android:id="@+id/mainMenuBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/descriptioMainMenuBackgroundDescription"
+        android:contentDescription="@string/descriptionMainMenuBackgroundDescription"
         android:scaleType="centerCrop"
         android:src="@drawable/background_main_menu" />
 

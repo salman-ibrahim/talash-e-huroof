@@ -16,6 +16,10 @@ import com.araujojordan.ktlist.KtList
 import com.gatow.salman.talashehuroof.models.Player
 import com.gatow.salman.talashehuroof.presenter.level.LevelBuilder
 import com.gatow.salman.talashehuroof.presenter.storage.StorageUtils
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.transition.MaterialContainerTransform
 import kotlinx.android.synthetic.main.fragment_difficulty_chooser.goBackButton
 import kotlinx.android.synthetic.main.fragment_level_chooser.*
@@ -79,4 +83,8 @@ class MenuLevelSelectionFragment : Fragment() {
             levelGrid?.adapter?.notifyDataSetChanged()
         }
     }
+}
+
+private fun InterstitialAd.show(menuLevelSelectionFragment: MenuLevelSelectionFragment) {
+
 }
