@@ -12,22 +12,4 @@
         <item name="android:windowBackground">@drawable/background_round_dialog</item>
     </style>
 
-    <style name="ShapeAppearanceOverlay.WordFinder.Button.Circle" parent="">
-        <item name="backgroundColor">@android:color/white</item>
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
-    </style>
-
-    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/coloBoardColorfulBackgroundDarker</item>
-    </style>
-
-    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/coloBoardColorfulBackgroundDarker</item>
-    </style>
-
-    <style name="NeutralButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/coloBoardColorfulBackgroundDarker</item>
-    </style>
-
 </resources>

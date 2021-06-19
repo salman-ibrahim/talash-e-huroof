@@ -3,10 +3,13 @@
 package com.gatow.salman.talashehuroof.views.board
 
 import android.content.Context
+import android.graphics.Paint
 import android.media.MediaPlayer
 import android.view.HapticFeedbackConstants
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.gatow.salman.talashehuroof.R
@@ -18,6 +21,7 @@ import com.gatow.salman.talashehuroof.utils.dragListener.DragSelectReceiver
 import com.gatow.salman.talashehuroof.utils.dragListener.DragSelectTouchListener
 import com.gatow.salman.talashehuroof.utils.dragListener.Mode
 import kotlinx.android.synthetic.main.item_board.view.*
+
 
 /**
  * Characters Board Adapter to the RecycleView
@@ -165,6 +169,14 @@ class BoardAdapter(
                 R.color.colorPrimary
             )
         }
+
+        val foundWordColor by lazy {
+            AppCompatResources.getColorStateList(
+                itemView.context,
+                R.color.whiteCharColor
+            )
+        }
+
         val unselectedColor by lazy {
             AppCompatResources.getColorStateList(
                 itemView.context,
@@ -186,11 +198,11 @@ class BoardAdapter(
             if (isTest && pos < 4)
                 boardElement.contentDescription = "test-$pos"
             boardElement.text = boardCharacter.char
-//            boardElement.ellipsize = TextUtils.TruncateAt.END;
 
             if (boardCharacter.selected) {
                 if (boardElement?.textColors != removedLetterColor) {
-                    boardElement.setTextColor(removedLetterColor)
+                    boardElement.setTextColor(foundWordColor)
+                    boardElement.setBackgroundResource(R.drawable.selected_word_bg_rounded)
                 }
             } else {
                 if (boardCharacter.isOnSelection) {
@@ -205,7 +217,7 @@ class BoardAdapter(
                     }
                 } else {
                     if (boardElement.textColors != unselectedColor)
-                        boardElement.setTextColor(unselectedColor)
+                        boardElement.setTextColor(selectedColor)
                 }
             }
 

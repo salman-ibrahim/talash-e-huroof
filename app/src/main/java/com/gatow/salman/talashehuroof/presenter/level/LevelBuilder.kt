@@ -36,7 +36,6 @@ class LevelBuilder {
 
     //Level.staus is disabled
 //    fun getLevelStatus(level: Int) = levels.firstOrNull { it.level == level }?.cleared ?: false
-
 //    fun setLevelStatus(level: Int) {
 //        levels[level].cleared = true
 //    }

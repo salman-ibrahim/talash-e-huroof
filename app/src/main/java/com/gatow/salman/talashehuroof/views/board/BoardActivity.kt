@@ -2,7 +2,6 @@
 
 package com.gatow.salman.talashehuroof.views.board
 
-import android.bluetooth.le.AdvertiseData
 import android.content.res.Configuration
 import android.graphics.Color
 import android.media.MediaPlayer
@@ -26,7 +25,10 @@ import com.gatow.salman.talashehuroof.presenter.board.BoardListener
 import com.gatow.salman.talashehuroof.presenter.board.BoardPresenter
 import com.gatow.salman.talashehuroof.presenter.level.LevelBuilder
 import com.gatow.salman.talashehuroof.presenter.storage.StorageUtils
-import com.google.android.gms.ads.*
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.android.synthetic.main.board_activity.*
@@ -34,8 +36,6 @@ import kotlinx.android.synthetic.main.item_words.view.*
 import nl.dionsegijn.konfetti.KonfettiView
 import nl.dionsegijn.konfetti.models.Shape
 import nl.dionsegijn.konfetti.models.Size
-import java.util.*
-import kotlin.collections.ArrayList
 
 /**
  * Main Activity of the Game Board
@@ -51,7 +51,6 @@ class BoardActivity : AppCompatActivity(),
         KtList(boardPresenter.allWords, R.layout.item_words) { word, itemView ->
             val textView = itemView.itemText
             val itemStrikethough = itemView.itemStrikethough
-
             textView.text = word.word
             textView.contentDescription = word.word
 
@@ -82,13 +81,18 @@ class BoardActivity : AppCompatActivity(),
     private var activityBoardAvailableWordsGrid: RecyclerView? = null
     private var activityBoardResetButton: ImageView? = null
     private var activityBoardTimer: TextView? = null
-    lateinit var mAdView : AdView
     private var mInterstitialAd: InterstitialAd? = null
+    lateinit var mAdView : AdView
     private final var TAG = "GameOver"
+    private var gameScore: TextView? = null
+    private var score: Int = 0
+    private var scoreStr: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.board_activity)
+
+
 
         // In-game Banner ad initialize here
         MobileAds.initialize(this) {
@@ -101,9 +105,9 @@ class BoardActivity : AppCompatActivity(),
         val adRequest = AdRequest.Builder().build()
         val adID = this.resources.getString(R.string.gameOverInterstitial)
 
-        InterstitialAd.load(this,adID, adRequest, object : InterstitialAdLoadCallback() {
+        InterstitialAd.load(this, adID, adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
-                Log.d(TAG, adError?.message)
+                Log.d(TAG, adError.message)
                 mInterstitialAd = null
             }
 
@@ -120,7 +124,8 @@ class BoardActivity : AppCompatActivity(),
         boardLevelLabel.text = getString(
             R.string.levelLabel,
             intent.getIntExtra("level", 1)
-        ).replace("0","۰")
+        )
+            .replace("0","۰")
             .replace("1","۱")
             .replace("2","۲")
             .replace("3","۳")
@@ -179,6 +184,19 @@ class BoardActivity : AppCompatActivity(),
                     activityBoardSelectedWord?.scaleX = 1f
                     activityBoardSelectedWord?.scaleY = 1f
                 }?.start()
+            score += 10
+            scoreStr = score.toString()
+                .replace("0","۰")
+                .replace("1","۱")
+                .replace("2","۲")
+                .replace("3","۳")
+                .replace("4","۴")
+                .replace("5","۵")
+                .replace("6","۶")
+                .replace("7","۷")
+                .replace("8","۸")
+                .replace("9","۹")
+            gameScore?.text = "سکور: " + scoreStr
             return
         } else {
             var word = ""
@@ -198,15 +216,6 @@ class BoardActivity : AppCompatActivity(),
             storage.savePlayer(this, player)
 
         }
-
-        // Fix the level error
-//        if (!LevelBuilder()
-//                .getLevelStatus(player.level)) {
-//            LevelBuilder().setLevelStatus(player.level)
-//            ++player.level
-//            storage.savePlayer(this, player)
-//        }
-
 
         viewKonfetti?.build()?.apply {
             addColors(Color.YELLOW, Color.BLUE, Color.MAGENTA)
@@ -268,6 +277,8 @@ class BoardActivity : AppCompatActivity(),
      */
     fun reset() {
         boardLoading?.visibility = View.VISIBLE
+        gameScore?.text = getString(R.string.scoreLabel)
+        score = 0
         Thread {
             try {
                 boardPresenter.reset(getLevel())
@@ -335,6 +346,7 @@ class BoardActivity : AppCompatActivity(),
         activityBoardAvailableWordsGrid = findViewById(R.id.activityBoardAvailableWordsGrid)
         activityBoardResetButton = findViewById(R.id.activityBoardResetButton)
         activityBoardTimer = findViewById(R.id.activityBoardTimer)
+        gameScore = findViewById(R.id.GameScore)
 
         activityBoardGrid?.adapter = boardAdapter
         (localPresenter ?: boardPresenter).board = boardPresenter.buildEmptyBoard()
